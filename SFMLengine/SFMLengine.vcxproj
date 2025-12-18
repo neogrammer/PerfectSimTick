@@ -73,10 +73,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>C:\sdks\SFML3\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\sdks\SFML3\lib;$(LibraryPath)</LibraryPath>
+    <CopyLocalDeploymentContent>true</CopyLocalDeploymentContent>
+    <CopyCppRuntimeToOutputDir>true</CopyCppRuntimeToOutputDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\sdks\SFML3\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\sdks\SFML3\lib;$(LibraryPath)</LibraryPath>
+    <CopyLocalDeploymentContent>true</CopyLocalDeploymentContent>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -141,16 +144,54 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Engine_Source\core\Game.cpp" />
+    <ClCompile Include="Engine_Source\objects\Obj.cpp" />
+    <ClCompile Include="Engine_Source\objects\Obj_Base.cpp" />
+    <ClCompile Include="Engine_Source\objects\StaticObject.cpp" />
+    <ClCompile Include="Engine_Source\objects\VisObj.cpp" />
     <ClCompile Include="Engine_Source\resources\Assets.cpp" />
+    <ClCompile Include="Engine_Source\tilemap\Tile.cpp" />
+    <ClCompile Include="Engine_Source\tilemap\Tilemap.cpp" />
+    <ClCompile Include="Engine_Source\tilemap\Tileset.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine_Source\core\Game.hpp" />
+    <ClInclude Include="Engine_Source\objects\Obj.hpp" />
+    <ClInclude Include="Engine_Source\objects\Obj_Base.hpp" />
+    <ClInclude Include="Engine_Source\objects\StaticObject.hpp" />
+    <ClInclude Include="Engine_Source\objects\VisObj.hpp" />
     <ClInclude Include="Engine_Source\resources\Assets.hpp" />
     <ClInclude Include="Engine_Source\resources\ResourceManager.hpp" />
+    <ClInclude Include="Engine_Source\tilemap\Tile.hpp" />
+    <ClInclude Include="Engine_Source\tilemap\Tilemap.hpp" />
+    <ClInclude Include="Engine_Source\tilemap\Tileset.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine_Source\resources\tpl\ResourceManager.tpl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Textures\backgrounds\animated_stars\animated_stars_bg.png">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    </Image>
+    <Image Include="Assets\Textures\Backgrounds\Animated_Stars\bg_stars_sheet_final.png" />
+    <Image Include="Assets\Textures\Backgrounds\Animated_Stars\starSheet.png" />
+    <Image Include="Assets\Textures\Knight\knight_attack_sheet_18.png" />
+    <Image Include="Assets\Textures\Knight\knight_block_sheet_16.png" />
+    <Image Include="Assets\Textures\Knight\knight_death_9.png" />
+    <Image Include="Assets\Textures\Knight\knight_got_hit_13.png" />
+    <Image Include="Assets\Textures\Knight\knight_idle_sheet_16.png" />
+    <Image Include="Assets\Textures\Knight\knight_jump_16.png" />
+    <Image Include="Assets\Textures\Knight\knight_run_sheet_17.png" />
+    <Image Include="Assets\Textures\Knight\knight_walk_sheet_15.png" />
+    <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_attack_sheet_18.png" />
+    <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_block_sheet_16.png" />
+    <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_death_sheet_9.png" />
+    <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_got_hit_sheet_13.png" />
+    <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_idle_sheet_16.png" />
+    <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_jump_sheet_16.png" />
+    <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_run_sheet_17.png" />
+    <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_walk_sheet_15.png" />
+    <Image Include="Assets\Textures\Tilesets\object_tiles_32_32.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

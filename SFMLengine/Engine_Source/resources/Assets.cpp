@@ -1,3 +1,4 @@
+
 #include <resources/Assets.hpp>
 #include <resources/ResourceManager.hpp>
 
@@ -32,7 +33,7 @@ void Assets::initSounds()
 void Assets::initTextures()
 {
 	
-	//textures.load((int)Assets::Textures::Invariant, "assets/textures/invariant.png");
+	textures.load((int)Assets::Textures::BG_Animated_Stars, "Assets/Textures/Backgrounds/Animated_Stars/bg_stars_sheet_final.png");
 
 
 

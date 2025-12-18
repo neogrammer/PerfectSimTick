@@ -1,6 +1,11 @@
 #ifndef ASSETS_HPP__
 #define ASSETS_HPP__
 
+#ifdef TX
+#undef TX
+#endif
+
+#define TX(name) Assets::textures.get(static_cast<int>(Assets::Textures::name))
 #include <SFML/Graphics.hpp>
 #include <resources/ResourceManager.hpp>
 
@@ -16,7 +21,7 @@ struct Assets
 	static void Initialize();
 
 	// Resource Enums 
-	enum class Textures : int { Invariant, Count };
+	enum class Textures : int { BG_Animated_Stars, Invariant, Count };
 	enum class Fonts : int {  Invariant, Count };
 	enum class Music : int { Invariant, Count };
 	enum class Sounds : int { Invariant, Count };
