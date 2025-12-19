@@ -3,6 +3,7 @@
 #include <tilemap/Tileset.hpp>
 #include <resources/Assets.hpp>
 #include <memory>
+#include <misc/util.hpp>
 class Tile;
 class Tilemap
 {

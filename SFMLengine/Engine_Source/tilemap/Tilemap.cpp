@@ -1,13 +1,15 @@
 
 #include <tilemap/Tilemap.hpp>
 #include <tilemap/Tile.hpp>
+#include <misc/util.hpp>
+
 Tilemap::Tilemap()
 	: m_tileset{nullptr}
 	, m_tiles{std::vector<std::unique_ptr<Tile>>{}}
 	, m_colsInMap{}
 	, m_rowsInMap{}
 {
-	m_tileset = std::make_unique<Tileset>(Assets::Textures::Tileset_Objects_1, 25 * 19, 25, sf::Vector2f{32.f,32.f});
+	m_tileset = std::make_unique<Tileset>(Assets::Textures::Tileset_Iso_1, 10 * 11, 11, sf::Vector2f{32.f,32.f});
 
 	m_tiles.clear();
 
@@ -63,7 +65,7 @@ void Tilemap::setMap(int* tileData, int numTiles_, int pitch_)
 			if (num == -1)
 			{
 				m_tiles.emplace_back(std::make_unique<Tile>(obj::type::tile, false, false, Assets::Textures::EmptyTile, sf::IntRect{ {0,0}, {1,1} }, sf::Vector2f{ 0.f,0.f }, sf::Vector2f{ 0.f,0.f }));
-				m_tiles.back()->setWPos(sf::Vector2f{ (float)(x * 50.f), (float)(y * 50.f) });
+				m_tiles.back()->setWPos(sf::Vector2f{ (float)(x * 32.f), (float)(y * 32.f) });
 				m_tiles.back()->setEmpty();
 			}
 			else
@@ -79,6 +81,7 @@ void Tilemap::setMap(int* tileData, int numTiles_, int pitch_)
 				m_tiles.back()->m_visible = true;
 
 			}
+
 		}
 	}
 }
@@ -115,7 +118,8 @@ void Tilemap::render(sf::RenderWindow& wnd_)
 	{
 		sf::Sprite spr{ m_tileset->getTexture() };
 		spr.setTextureRect(i->getTexRect());
-		spr.setPosition(i->getTexPosition());
+		spr.setPosition(utl::ToIso(sf::Vector2f(i->getTexPosition().x, i->getTexPosition().y )));
+		spr.move({(float)glb::WOX * (float)glb::TW,(float)glb::WOY * (float)glb::TH});
 		wnd_.draw(spr);
 	}
 }

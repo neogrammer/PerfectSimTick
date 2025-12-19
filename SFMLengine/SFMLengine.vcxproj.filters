@@ -58,6 +58,9 @@
     <Filter Include="Assets\Textures\Backgrounds\Animated_Stars">
       <UniqueIdentifier>{519e8c5d-0a8c-4236-89fe-1a1ae44c3af4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\misc">
+      <UniqueIdentifier>{f7ffeb29-1ce8-4231-b682-92f656bc08b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -90,6 +93,12 @@
     <ClCompile Include="Engine_Source\objects\VisObj.cpp">
       <Filter>Source Files\objects</Filter>
     </ClCompile>
+    <ClCompile Include="Engine_Source\misc\util.cpp">
+      <Filter>Header Files\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine_Source\misc\globals.cpp">
+      <Filter>Header Files\misc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine_Source\resources\Assets.hpp">
@@ -121,6 +130,12 @@
     </ClInclude>
     <ClInclude Include="Engine_Source\objects\VisObj.hpp">
       <Filter>Header Files\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\misc\util.hpp">
+      <Filter>Header Files\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\misc\globals.hpp">
+      <Filter>Header Files\misc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +202,9 @@
       <Filter>Assets\Textures</Filter>
     </Image>
     <Image Include="Assets\Textures\Tilesets\EmptyTile.png">
+      <Filter>Assets\Textures\Tilesets</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Tilesets\tileset_iso_1.png">
       <Filter>Assets\Textures\Tilesets</Filter>
     </Image>
   </ItemGroup>
