@@ -21,7 +21,7 @@ protected:
 	
 public:
 	explicit VisObj(const Obj& obj);
-	VisObj(obj::type type_ = obj::type::obj, Assets::Textures tex_ = Assets::Textures::Invariant, sf::IntRect rect_ = { {0,0},{0,0} }, sf::Vector2f texOff_ = {0.f,0.f});
+	VisObj(obj::type type_ = obj::type::vis_obj, Assets::Textures tex_ = Assets::Textures::Invariant, sf::IntRect rect_ = { {0,0},{0,0} }, sf::Vector2f texOff_ = {0.f,0.f});
 	virtual ~VisObj() override;
 
 	VisObj(const VisObj& o);

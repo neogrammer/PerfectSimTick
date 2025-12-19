@@ -170,11 +170,8 @@
     <None Include="Engine_Source\resources\tpl\ResourceManager.tpl" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Assets\Textures\backgrounds\animated_stars\animated_stars_bg.png">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
-    </Image>
     <Image Include="Assets\Textures\Backgrounds\Animated_Stars\bg_stars_sheet_final.png" />
-    <Image Include="Assets\Textures\Backgrounds\Animated_Stars\starSheet.png" />
+    <Image Include="Assets\Textures\Invariant.png" />
     <Image Include="Assets\Textures\Knight\knight_attack_sheet_18.png" />
     <Image Include="Assets\Textures\Knight\knight_block_sheet_16.png" />
     <Image Include="Assets\Textures\Knight\knight_death_9.png" />
@@ -191,6 +188,7 @@
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_jump_sheet_16.png" />
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_run_sheet_17.png" />
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_walk_sheet_15.png" />
+    <Image Include="Assets\Textures\Tilesets\EmptyTile.png" />
     <Image Include="Assets\Textures\Tilesets\object_tiles_32_32.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

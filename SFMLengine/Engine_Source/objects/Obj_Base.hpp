@@ -8,6 +8,8 @@ namespace obj
 	{
 		obj_base = 0Ui8,
 		obj,
+		vis_obj,
+		tile,
 		count,
 		unknown
 	};

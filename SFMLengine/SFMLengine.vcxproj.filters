@@ -28,18 +28,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Assets\Knight">
-      <UniqueIdentifier>{e163440b-a924-4e95-abb0-ea09fcf0650e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Assets\Knight\Shadow">
-      <UniqueIdentifier>{ac7e5036-b143-459c-af1e-50358e81f9ab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Assets\backgrounds">
-      <UniqueIdentifier>{b58ee99b-2cd6-4f8a-90f4-9c1f5ecc8ada}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Assets\backgrounds\animated_stars">
-      <UniqueIdentifier>{519e8c5d-0a8c-4236-89fe-1a1ae44c3af4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\tilemap">
       <UniqueIdentifier>{442ec959-c897-4b10-abba-e11fadb67220}</UniqueIdentifier>
     </Filter>
@@ -51,6 +39,24 @@
     </Filter>
     <Filter Include="Source Files\objects">
       <UniqueIdentifier>{441e3e12-8b57-4fd0-bfb4-a3b6c6caa9c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures">
+      <UniqueIdentifier>{2f3e31c4-0e06-4cc4-808f-b17f1d204d94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Tilesets">
+      <UniqueIdentifier>{4f3cbe63-a788-423a-a851-d509219deebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Knight">
+      <UniqueIdentifier>{e163440b-a924-4e95-abb0-ea09fcf0650e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Knight\Shadow">
+      <UniqueIdentifier>{ac7e5036-b143-459c-af1e-50358e81f9ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Backgrounds">
+      <UniqueIdentifier>{b58ee99b-2cd6-4f8a-90f4-9c1f5ecc8ada}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Backgrounds\Animated_Stars">
+      <UniqueIdentifier>{519e8c5d-0a8c-4236-89fe-1a1ae44c3af4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -124,64 +130,64 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_attack_sheet_18.png">
-      <Filter>Assets\Knight\Shadow</Filter>
+      <Filter>Assets\Textures\Knight\Shadow</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_block_sheet_16.png">
-      <Filter>Assets\Knight\Shadow</Filter>
+      <Filter>Assets\Textures\Knight\Shadow</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_death_sheet_9.png">
-      <Filter>Assets\Knight\Shadow</Filter>
+      <Filter>Assets\Textures\Knight\Shadow</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_got_hit_sheet_13.png">
-      <Filter>Assets\Knight\Shadow</Filter>
+      <Filter>Assets\Textures\Knight\Shadow</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_idle_sheet_16.png">
-      <Filter>Assets\Knight\Shadow</Filter>
+      <Filter>Assets\Textures\Knight\Shadow</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_jump_sheet_16.png">
-      <Filter>Assets\Knight\Shadow</Filter>
+      <Filter>Assets\Textures\Knight\Shadow</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_run_sheet_17.png">
-      <Filter>Assets\Knight\Shadow</Filter>
+      <Filter>Assets\Textures\Knight\Shadow</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_walk_sheet_15.png">
-      <Filter>Assets\Knight\Shadow</Filter>
+      <Filter>Assets\Textures\Knight\Shadow</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\knight_attack_sheet_18.png">
-      <Filter>Assets\Knight</Filter>
+      <Filter>Assets\Textures\Knight</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\knight_block_sheet_16.png">
-      <Filter>Assets\Knight</Filter>
+      <Filter>Assets\Textures\Knight</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\knight_death_9.png">
-      <Filter>Assets\Knight</Filter>
+      <Filter>Assets\Textures\Knight</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\knight_got_hit_13.png">
-      <Filter>Assets\Knight</Filter>
+      <Filter>Assets\Textures\Knight</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\knight_idle_sheet_16.png">
-      <Filter>Assets\Knight</Filter>
+      <Filter>Assets\Textures\Knight</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\knight_jump_16.png">
-      <Filter>Assets\Knight</Filter>
+      <Filter>Assets\Textures\Knight</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\knight_run_sheet_17.png">
-      <Filter>Assets\Knight</Filter>
+      <Filter>Assets\Textures\Knight</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\knight_walk_sheet_15.png">
-      <Filter>Assets\Knight</Filter>
-    </Image>
-    <Image Include="Assets\Textures\Tilesets\object_tiles_32_32.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Textures\backgrounds\animated_stars\animated_stars_bg.png">
-      <Filter>Assets\backgrounds\animated_stars</Filter>
-    </Image>
-    <Image Include="Assets\Textures\Backgrounds\Animated_Stars\starSheet.png">
-      <Filter>Assets\backgrounds\animated_stars</Filter>
+      <Filter>Assets\Textures\Knight</Filter>
     </Image>
     <Image Include="Assets\Textures\Backgrounds\Animated_Stars\bg_stars_sheet_final.png">
-      <Filter>Assets\backgrounds\animated_stars</Filter>
+      <Filter>Assets\Textures\Backgrounds\Animated_Stars</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Tilesets\object_tiles_32_32.png">
+      <Filter>Assets\Textures\Tilesets</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Invariant.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Tilesets\EmptyTile.png">
+      <Filter>Assets\Textures\Tilesets</Filter>
     </Image>
   </ItemGroup>
 </Project>

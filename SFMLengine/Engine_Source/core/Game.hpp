@@ -9,6 +9,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/View.hpp>
+#include <tilemap/Tilemap.hpp>
 
 enum class GameState
 {
@@ -46,12 +47,12 @@ class Game
     size_t bgFrameIndex_{ 0 };
     sf::View playView_;
     sf::View screenView_;
-
+    Tilemap tmap_;
     GameState currentState_{GameState::Stage};
     StageName currentStage_{ StageName::Intro };
 public:
   
-                                    // Default constructor
+                        // Default constructor
     Game(const Game& other);                  // Copy constructor
     Game(Game&& other) noexcept;              // Move constructor
     Game(int id = 0,const std::string& name = "GAME");              // Parameterized constructor
