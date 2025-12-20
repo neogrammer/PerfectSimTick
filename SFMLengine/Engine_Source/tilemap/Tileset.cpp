@@ -63,6 +63,9 @@ Tileset::Tileset(Assets::Textures tex_, int numTiles_, int pitch_, sf::Vector2f 
 			m_tiles.emplace_back(std::make_unique<Tile>(obj::type::tile, true, true, m_tex, sf::IntRect{ {x * (int)size_.x, y * (int)size_.y}, {(int)size_.x, (int)size_.y} }, sf::Vector2f{ 0.f,0.f }, sf::Vector2f{ 0.f,0.f }));
 		}
 	}
+
+	m_animTiles.clear();
+
 }
 
 Tileset::~Tileset() = default;
@@ -87,6 +90,17 @@ void Tileset::setATex(Assets::Textures tex_)
 	m_tex = tex_;
 }
 
+void Tileset::setAnimTiles(int numAnimTiles_, std::vector<int> animTileIndices_, std::vector<int> animTileCounts_)
+{
+	if (numAnimTiles_ > 0)
+		m_animTiles.reserve(numAnimTiles_);
+
+	for (int i = 0; i < numAnimTiles_; i++)
+	{
+		m_animTiles.emplace_back(std::make_unique<AnimTile>(m_tiles, animTileIndices_[i], animTileIndices_[i] + animTileCounts_[i] - 1, 0.f));
+	}
+}
+
 sf::IntRect Tileset::getTexRect(int index_)
 {
 	return m_tiles.at(index_)->getTexRect();
@@ -95,6 +109,19 @@ sf::IntRect Tileset::getTexRect(int index_)
 Tile& Tileset::getTile(int index_)
 {
 	return *m_tiles[index_];
+}
+
+AnimTile& Tileset::getAnimTile(int index_)
+{
+	for (auto& aTile : m_animTiles)
+	{
+		if (index_ == aTile->getStartIndex())
+		{
+			// we found it
+			return *aTile;
+		}
+	}
+	throw std::runtime_error("Sorry, no anim tile at index: " + index_);
 }
 
 float Tileset::getTW()
@@ -147,4 +174,17 @@ const int Tileset::getRows() const noexcept
 void Tileset::setRows(const int rows_)
 {
 	m_rows = rows_;
+}
+
+std::vector<std::unique_ptr<AnimTile>>& Tileset::getAnimTiles()
+{
+	return m_animTiles;
+}
+
+void Tileset::update(double dt_)
+{
+	for (auto& t : m_animTiles)
+	{
+		t->update(dt_);
+	}
 }

@@ -4,11 +4,13 @@
 #include <vector>
 #include <memory>
 #include <resources/Assets.hpp>
+#include <tilemap/AnimTile.hpp>
 class Tile;
 class Tileset
 {
 
 	std::vector<std::unique_ptr<Tile>> m_tiles;
+	std::vector<std::unique_ptr<AnimTile>> m_animTiles;
 	Assets::Textures m_tex;
 	
 	int m_numTiles{1};
@@ -25,9 +27,11 @@ public:
 	Assets::Textures getATex();
 	const sf::Texture& getTexture();
 	void setATex(Assets::Textures tex_);
+	void setAnimTiles(int numAnimTiles_, std::vector<int> animTileIndices_, std::vector<int> animTileCounts_);
 
 	sf::IntRect getTexRect(int index_);
 	Tile& getTile(int index_);
+	AnimTile& getAnimTile(int index_);
 
 	float getTW();
 	float getTH();
@@ -40,8 +44,8 @@ public:
 	void setCols(const int cols_);
 	const int getRows() const noexcept;
 	void setRows(const int rows_);
-
-
+	std::vector<std::unique_ptr<AnimTile>>& getAnimTiles();
+	void update(double dt_);
 
 };
 

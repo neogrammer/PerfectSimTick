@@ -13,6 +13,7 @@ class Tilemap
 	int m_rowsInMap{};
 	
 public:
+	
 	Tilemap();
 	~Tilemap();
 
@@ -27,7 +28,7 @@ public:
 	sf::Vector2f getTileSize();
 	Assets::Textures getCurrTexType();
 	void loadMap(const int cols_, const int rows_, const Assets::Textures tex_, const sf::Vector2f tileSize_, int numTilesInSheet_, int sheetPitch_, int** mapData);
-	
+	std::unique_ptr<Tileset>& getTileset();
 };
 
 

@@ -60,7 +60,10 @@ Obj& Obj::operator=(const Obj& o)
 	Obj* ptrToThis = this;
 	Obj* old = ptrToThis;
 	ptrToThis = o.clone();
-	*old = *ptrToThis;
+	old->setType(ptrToThis->getType());
+	old->setWPos(ptrToThis->getWPos());
+	old->setWSize(ptrToThis->getWSize());
+
 	delete ptrToThis;
 	ptrToThis = nullptr;
 	old = nullptr;

@@ -59,7 +59,10 @@ VisObj& VisObj::operator=(const VisObj& o)
 	auto* ptrToThis = this;
 	VisObj* old = ptrToThis;
 	ptrToThis = o.clone();
-	*old = *ptrToThis;
+	old->setType(ptrToThis->getType());
+	old->setWPos(ptrToThis->getWPos());
+	old->setWSize(ptrToThis->getWSize());
+
 	delete ptrToThis;
 	ptrToThis = nullptr;
 	old = nullptr;

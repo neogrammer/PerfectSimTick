@@ -22,9 +22,9 @@ protected:
 	obj::type getType() const noexcept;
 	Obj_Base* clone() const;
 	void setType(obj::type type_);
+	~Obj_Base();
 public:
 	Obj_Base(obj::type type_ = obj::type::unknown);
-	~Obj_Base();
 	Obj_Base(const Obj_Base& o);
 	Obj_Base& operator=(const Obj_Base& o);
 	Obj_Base(Obj_Base&& o) noexcept;

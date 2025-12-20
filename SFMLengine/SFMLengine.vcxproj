@@ -151,6 +151,7 @@
     <ClCompile Include="Engine_Source\objects\StaticObject.cpp" />
     <ClCompile Include="Engine_Source\objects\VisObj.cpp" />
     <ClCompile Include="Engine_Source\resources\Assets.cpp" />
+    <ClCompile Include="Engine_Source\tilemap\AnimTile.cpp" />
     <ClCompile Include="Engine_Source\tilemap\Tile.cpp" />
     <ClCompile Include="Engine_Source\tilemap\Tilemap.cpp" />
     <ClCompile Include="Engine_Source\tilemap\Tileset.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Engine_Source\objects\VisObj.hpp" />
     <ClInclude Include="Engine_Source\resources\Assets.hpp" />
     <ClInclude Include="Engine_Source\resources\ResourceManager.hpp" />
+    <ClInclude Include="Engine_Source\tilemap\AnimTile.hpp" />
     <ClInclude Include="Engine_Source\tilemap\Tile.hpp" />
     <ClInclude Include="Engine_Source\tilemap\Tilemap.hpp" />
     <ClInclude Include="Engine_Source\tilemap\Tileset.hpp" />

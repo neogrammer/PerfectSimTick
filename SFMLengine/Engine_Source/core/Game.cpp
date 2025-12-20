@@ -14,12 +14,12 @@ Game::~Game() = default;
 
 
 Game::Game(const Game& other)
-    : Game{}
+    : Game{other.id_, other.name_}
 {
 }
 
 Game::Game(Game&& other) noexcept
-    : Game{}
+    : Game{ other.id_, other.name_ }
 {
 }
 
@@ -27,6 +27,7 @@ Game::Game(int id, const std::string& name)
     : id_{ id }, name_{ name }
     , bgStars_{ TX(BG_Animated_Stars) }
 	, tmap_{}
+	, aTile_{nullptr}
 {
     int y = 0;
     for (; y < 4; y++)
@@ -71,6 +72,8 @@ Game::Game(int id, const std::string& name)
     };
 
     tmap_.setMap(data, 25 * 19, 25);
+    tmap_.getTileset()->setAnimTiles(1, { 0 }, { 2 });
+    tmap_.getTileset()->getAnimTile(0).setDelays({ 0.2f, 0.2f});
 }
 
 Game& Game::operator=(const Game& other)
@@ -181,29 +184,25 @@ void Game::input()
 
 void Game::update(double dt)
 {
+   
+
     bgFrameElapsed_ += dt;
+    
+
     if (bgFrameElapsed_ >= bgFrameDelay_)
     {
         bgFrameElapsed_ = 0.f;
         ++bgFrameIndex_ %= 75;
-        bgStars_.setTextureRect(bgRects_[bgFrameIndex_]);
+       
+            bgStars_.setTextureRect(bgRects_[bgFrameIndex_]);
     }
-
+   
+    tmap_.getTileset()->update(dt);
     
 }
 
 void Game::render(sf::RenderWindow& wnd)
-{
-    //static bool firstRun{ true };
-    //while (firstRun)
-    //{
-    //    wnd.requestFocus();
-    //    if (wnd.hasFocus())
-    //    {
-    //        firstRun = false;
-    //    }
-    //}
-    
+{   
 
     // Clear the frame to get ready for new drawing
     wnd.clear(sf::Color::Blue);
@@ -217,13 +216,11 @@ void Game::render(sf::RenderWindow& wnd)
 
 
     // draw BG layers
-    //starsBG.render(wnd);
 
     // draw ground layer
 
     // draw tilemap and game objects together from front to back including player
     tmap_.render(wnd);
-
 
     // draw foreground layer
 
@@ -278,19 +275,7 @@ void Game::run()
         	update(fps_60_double);
             accumulator -= fps_60_micros;
         }
-        if (fpsCounterTimer.getElapsedTime().asSeconds() >= 1)
-        {
-            if (fpsCounter == 60)
-            {
-                
-                update(static_cast<double>(accumulator));
-                fpsCounter++;
-                accumulator = 0i64;
-            }
-            fpsCounterTimer.restart();
-            std::cout << "FPS: " << (fpsCounter - 1) << "\n";
-            fpsCounter = 0;
-        }
+     
         render(wnd);
 
     }

@@ -99,6 +99,9 @@
     <ClCompile Include="Engine_Source\misc\globals.cpp">
       <Filter>Header Files\misc</Filter>
     </ClCompile>
+    <ClCompile Include="Engine_Source\tilemap\AnimTile.cpp">
+      <Filter>Source Files\tilemap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine_Source\resources\Assets.hpp">
@@ -136,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="Engine_Source\misc\globals.hpp">
       <Filter>Header Files\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\tilemap\AnimTile.hpp">
+      <Filter>Header Files\tilemap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -10,6 +10,8 @@
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/View.hpp>
 #include <tilemap/Tilemap.hpp>
+#include <tilemap/AnimTile.hpp>
+
 
 enum class GameState
 {
@@ -50,9 +52,10 @@ class Game
     Tilemap tmap_;
     GameState currentState_{GameState::Stage};
     StageName currentStage_{ StageName::Intro };
+    std::shared_ptr<AnimTile> aTile_;
 public:
-  
-                        // Default constructor
+	
+	// Default constructor
     Game(const Game& other);                  // Copy constructor
     Game(Game&& other) noexcept;              // Move constructor
     Game(int id = 0,const std::string& name = "GAME");              // Parameterized constructor

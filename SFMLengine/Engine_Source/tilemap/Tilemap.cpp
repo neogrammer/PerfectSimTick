@@ -9,8 +9,10 @@ Tilemap::Tilemap()
 	, m_colsInMap{}
 	, m_rowsInMap{}
 {
-	m_tileset = std::make_unique<Tileset>(Assets::Textures::Tileset_Iso_1, 10 * 11, 11, sf::Vector2f{32.f,32.f});
 
+	
+	m_tileset = std::make_unique<Tileset>(Assets::Textures::Tileset_Iso_1, 10 * 11, 11, sf::Vector2f{32.f,32.f});
+	
 	m_tiles.clear();
 
 	
@@ -111,17 +113,48 @@ void Tilemap::loadMap(const int cols_, const int rows_, const Assets::Textures t
 {
 }
 
+std::unique_ptr<Tileset>& Tilemap::getTileset()
+{
+	return m_tileset;
+}
+
 void Tilemap::render(sf::RenderWindow& wnd_)
 {
 	//for (auto& i : tileset->getTiles())
-	for (auto& i : m_tiles)
+	std::vector<int> skip;
+	skip.clear();
+	for (int i = 0; i < m_tileset->getAnimTiles().size(); i++)
 	{
-		sf::Sprite spr{ m_tileset->getTexture() };
-		spr.setTextureRect(i->getTexRect());
-		spr.setPosition(utl::ToIso(sf::Vector2f(i->getTexPosition().x, i->getTexPosition().y )));
-		spr.move({(float)glb::WOX * (float)glb::TW,(float)glb::WOY * (float)glb::TH});
-		wnd_.draw(spr);
+		
+		skip.push_back(m_tileset->getAnimTile(i).getStartIndex());
+		
 	}
+	int skipcount = 0;
+	for (int i = 0; i < m_tiles.size(); i++)
+	{
+		bool found = false;
+		for (auto j : skip)
+		{
+			if (i == j) { found = true; }
+		}
+
+		if (found)
+		{
+			m_tileset->getAnimTile(skipcount).render(wnd_);
+			skipcount++;
+		}
+		else
+		{
+			sf::Sprite spr{ m_tileset->getTexture() };
+			spr.setTextureRect(m_tiles[i]->getTexRect());
+			spr.setPosition(utl::ToIso(sf::Vector2f(m_tiles[i]->getTexPosition().x, m_tiles[i]->getTexPosition().y)));
+			spr.move({ (float)glb::WOX * (float)glb::TW,(float)glb::WOY * (float)glb::TH });
+			wnd_.draw(spr);
+		}
+	}
+
+	
+
 }
 
 
