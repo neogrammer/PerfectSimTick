@@ -20,10 +20,27 @@ void Tile::setEmpty()
 	setATex(Assets::Textures::EmptyTile);
 }
 
+int Tile::getTileNum()
+{
+	return m_tileNum;
+}
 
-Tile::Tile(obj::type type_, bool solid_, bool visible_, Assets::Textures tex_, sf::IntRect texRect_, sf::Vector2f worldPos_, sf::Vector2f texRectOff_)
+
+void Tile::setTileNum(int num_)
+{
+	m_tileNum = num_;
+}
+
+Tile* Tile::clone()
+{
+	return new Tile(*this);
+}
+
+
+Tile::Tile(obj::type type_, bool solid_, bool visible_, Assets::Textures tex_, sf::IntRect texRect_, sf::Vector2f worldPos_, sf::Vector2f texRectOff_, int tileNum_)
 	: VisObj{ type_ , tex_, texRect_, texRectOff_ }
 	, m_solid{solid_}, m_visible{visible_}
+	, m_tileNum{tileNum_}
 {
 	this->setWPos(worldPos_);
 }

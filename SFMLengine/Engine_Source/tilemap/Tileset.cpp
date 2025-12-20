@@ -121,7 +121,7 @@ AnimTile& Tileset::getAnimTile(int index_)
 			return *aTile;
 		}
 	}
-	throw std::runtime_error("Sorry, no anim tile at index: " + index_);
+	//throw std::runtime_error("Sorry, no anim tile at index: " + index_);
 }
 
 float Tileset::getTW()

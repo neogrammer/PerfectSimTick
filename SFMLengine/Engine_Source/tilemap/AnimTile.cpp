@@ -29,7 +29,7 @@ AnimTile::AnimTile(std::vector<std::unique_ptr<Tile>>& tileset_, int startIdx_, 
 		if (startIdx_ + i <= endIdx_)
 		{
 			m_delays.emplace_back(delay_);
-			m_tiles.push_back(tileset_[startIdx_ + i].get());
+			m_tiles.push_back(tileset_[startIdx_ + i].get()->clone());
 		}
 		else
 		{
@@ -40,9 +40,21 @@ AnimTile::AnimTile(std::vector<std::unique_ptr<Tile>>& tileset_, int startIdx_, 
 	m_numTiles = numFrames;
 
 	m_tex = tileset_.at(0)->getATex();
+
+	for (auto& t : m_tiles)
+	{
+		t->setTileNum((int)m_startIndex);
+	}
 }
 
-AnimTile::~AnimTile() = default;
+AnimTile::~AnimTile()
+{
+	for (auto& t : m_tiles)
+	{
+		delete t;
+		t = nullptr;
+	}
+}
 
 void AnimTile::update(double dt_)
 {
@@ -62,6 +74,11 @@ void AnimTile::render(sf::RenderWindow& wnd_)
 	spr.setPosition(m_tiles[m_index]->getWPos()- m_tiles[m_index]->getTexOff());
 	spr.setTextureRect(m_tiles[m_index]->getTexRect());
 	wnd_.draw(spr);
+}
+
+void AnimTile::setMapTile(Tile* mapTile_)
+{
+	mapTile_->setTexRect(m_tiles[m_index]->getTexRect());
 }
 
 void AnimTile::setDelays(std::vector<float> delays_)

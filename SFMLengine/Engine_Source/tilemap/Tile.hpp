@@ -10,6 +10,7 @@ class Tile : public VisObj
 {
 	bool m_solid{true};
 	bool m_visible{ true };
+	int m_tileNum{ -1 };
 public:
 	friend class Tilemap;
 
@@ -17,7 +18,7 @@ public:
 
 	Tile(obj::type type_ = obj::type::tile, bool solid_ = true, bool visible_ = true, Assets::Textures tex_ = Assets::Textures::Tileset_Objects_1
 		, sf::IntRect texRect_ = sf::IntRect{sf::Vector2i{0,0}, sf::Vector2i{ 32,32 } }
-	    , sf::Vector2f worldPos_ = sf::Vector2f{ 0.f,0.f }, sf::Vector2f texRectOff_ = sf::Vector2f{ 0.f,0.f });
+	    , sf::Vector2f worldPos_ = sf::Vector2f{ 0.f,0.f }, sf::Vector2f texRectOff_ = sf::Vector2f{ 0.f,0.f }, int tileNum_ = -1);
 	
 	virtual ~Tile() override;
 
@@ -32,7 +33,9 @@ public:
 	bool isEmpty();
 	void setEmpty();
 
-
+	int getTileNum();
+	void setTileNum(int num_);
+	Tile* clone();
 	
 };
 

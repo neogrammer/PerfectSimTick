@@ -66,7 +66,7 @@ void Tilemap::setMap(int* tileData, int numTiles_, int pitch_)
 	
 			if (num == -1)
 			{
-				m_tiles.emplace_back(std::make_unique<Tile>(obj::type::tile, false, false, Assets::Textures::EmptyTile, sf::IntRect{ {0,0}, {1,1} }, sf::Vector2f{ 0.f,0.f }, sf::Vector2f{ 0.f,0.f }));
+				m_tiles.emplace_back(std::make_unique<Tile>(obj::type::tile, false, false, Assets::Textures::EmptyTile, sf::IntRect{ {0,0}, {1,1} }, sf::Vector2f{ 0.f,0.f }, sf::Vector2f{ 0.f,0.f }, -1));
 				m_tiles.back()->setWPos(sf::Vector2f{ (float)(x * 32.f), (float)(y * 32.f) });
 				m_tiles.back()->setEmpty();
 			}
@@ -78,7 +78,7 @@ void Tilemap::setMap(int* tileData, int numTiles_, int pitch_)
 
 				sf::Vector2f tmpTexPos = {xx * m_tileset->getTileSize().x,yy * m_tileset->getTileSize().y };
 
-				m_tiles.emplace_back(std::make_unique<Tile>(obj::type::tile, true, true, m_tileset->getATex(),sf::IntRect{ sf::Vector2i{ (int)tmpTexPos.x,(int)tmpTexPos.y }, sf::Vector2i{tRef->getTexRect().size} }, sf::Vector2f{ (float)x * (float)m_tileset->getTileSize().x, (float)y * (float)m_tileset->getTileSize().y }, sf::Vector2f{ 0.f,0.f }));
+				m_tiles.emplace_back(std::make_unique<Tile>(obj::type::tile, true, true, m_tileset->getATex(),sf::IntRect{ sf::Vector2i{ (int)tmpTexPos.x,(int)tmpTexPos.y }, sf::Vector2i{tRef->getTexRect().size} }, sf::Vector2f{ (float)x * (float)m_tileset->getTileSize().x, (float)y * (float)m_tileset->getTileSize().y }, sf::Vector2f{ 0.f,0.f }, num));
 				m_tiles.back()->m_solid = true;
 				m_tiles.back()->m_visible = true;
 
@@ -118,39 +118,34 @@ std::unique_ptr<Tileset>& Tilemap::getTileset()
 	return m_tileset;
 }
 
+std::vector<std::unique_ptr<Tile>>& Tilemap::getTiles()
+{
+	return m_tiles;
+}
+
 void Tilemap::render(sf::RenderWindow& wnd_)
 {
 	//for (auto& i : tileset->getTiles())
 	std::vector<int> skip;
 	skip.clear();
-	for (int i = 0; i < m_tileset->getAnimTiles().size(); i++)
-	{
-		
-		skip.push_back(m_tileset->getAnimTile(i).getStartIndex());
-		
-	}
-	int skipcount = 0;
+	
 	for (int i = 0; i < m_tiles.size(); i++)
 	{
-		bool found = false;
-		for (auto j : skip)
+		for (int j = 0; j < m_tileset->getAnimTiles().size(); j++)
 		{
-			if (i == j) { found = true; }
+			if (m_tiles[i]->getTileNum() == m_tileset->getAnimTile(j).getStartIndex())
+			{
+
+				m_tileset->getAnimTile(j).setMapTile(m_tiles[i].get());
+			}
 		}
 
-		if (found)
-		{
-			m_tileset->getAnimTile(skipcount).render(wnd_);
-			skipcount++;
-		}
-		else
-		{
-			sf::Sprite spr{ m_tileset->getTexture() };
-			spr.setTextureRect(m_tiles[i]->getTexRect());
-			spr.setPosition(utl::ToIso(sf::Vector2f(m_tiles[i]->getTexPosition().x, m_tiles[i]->getTexPosition().y)));
-			spr.move({ (float)glb::WOX * (float)glb::TW,(float)glb::WOY * (float)glb::TH });
-			wnd_.draw(spr);
-		}
+		sf::Sprite spr{ m_tileset->getTexture() };
+		spr.setTextureRect(m_tiles[i]->getTexRect());
+		spr.setPosition(utl::ToIso(sf::Vector2f(m_tiles[i]->getTexPosition().x, m_tiles[i]->getTexPosition().y)));
+		spr.move({ (float)glb::WOX * (float)glb::TW,(float)glb::WOY * (float)glb::TH });
+		wnd_.draw(spr);
+		
 	}
 
 	

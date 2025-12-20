@@ -29,7 +29,7 @@ public:
 
 	void update(double dt_);
 	void render(sf::RenderWindow& wnd_);
-
+	void setMapTile(Tile* mapTile_);
 	void setDelays(std::vector<float> delays_);
 	int getStartIndex();
 	int getCount();
