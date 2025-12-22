@@ -143,6 +143,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine_Source\action\ActionMachine.cpp" />
+    <ClCompile Include="Engine_Source\core\Animation.cpp" />
     <ClCompile Include="Engine_Source\core\Game.cpp" />
     <ClCompile Include="Engine_Source\misc\globals.cpp" />
     <ClCompile Include="Engine_Source\misc\util.cpp" />
@@ -158,6 +160,14 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine_Source\action\ActionMachine.hpp" />
+    <ClInclude Include="Engine_Source\action\AnimRequest.hpp" />
+    <ClInclude Include="Engine_Source\action\Command.hpp" />
+    <ClInclude Include="Engine_Source\action\Entity.hpp" />
+    <ClInclude Include="Engine_Source\action\Events.hpp" />
+    <ClInclude Include="Engine_Source\action\IAction.hpp" />
+    <ClInclude Include="Engine_Source\action\InputBuffer.hpp" />
+    <ClInclude Include="Engine_Source\core\Animation.hpp" />
     <ClInclude Include="Engine_Source\core\Game.hpp" />
     <ClInclude Include="Engine_Source\misc\globals.hpp" />
     <ClInclude Include="Engine_Source\misc\util.hpp" />

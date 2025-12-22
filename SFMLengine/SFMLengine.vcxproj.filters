@@ -61,6 +61,12 @@
     <Filter Include="Header Files\misc">
       <UniqueIdentifier>{f7ffeb29-1ce8-4231-b682-92f656bc08b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\action">
+      <UniqueIdentifier>{c77623e5-38f0-40ad-9ef8-6ec1028b062f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\action">
+      <UniqueIdentifier>{dc8c5f78-d908-492f-8257-636a686be6bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -102,6 +108,12 @@
     <ClCompile Include="Engine_Source\tilemap\AnimTile.cpp">
       <Filter>Source Files\tilemap</Filter>
     </ClCompile>
+    <ClCompile Include="Engine_Source\core\Animation.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine_Source\action\ActionMachine.cpp">
+      <Filter>Source Files\action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine_Source\resources\Assets.hpp">
@@ -142,6 +154,30 @@
     </ClInclude>
     <ClInclude Include="Engine_Source\tilemap\AnimTile.hpp">
       <Filter>Header Files\tilemap</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\core\Animation.hpp">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\action\ActionMachine.hpp">
+      <Filter>Header Files\action</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\action\AnimRequest.hpp">
+      <Filter>Header Files\action</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\action\Command.hpp">
+      <Filter>Header Files\action</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\action\Events.hpp">
+      <Filter>Header Files\action</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\action\IAction.hpp">
+      <Filter>Header Files\action</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\action\InputBuffer.hpp">
+      <Filter>Header Files\action</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\action\Entity.hpp">
+      <Filter>Header Files\action</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
