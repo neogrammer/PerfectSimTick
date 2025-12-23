@@ -11,7 +11,7 @@ Tilemap::Tilemap()
 {
 
 	
-	m_tileset = std::make_unique<Tileset>(Assets::Textures::Tileset_Iso_1, 10 * 11, 11, sf::Vector2f{32.f,32.f});
+	m_tileset = std::make_unique<Tileset>(Assets::Textures::Tileset_Blocks_128, 10 * 11, 11, sf::Vector2f{128.f,128.f});
 	
 	m_tiles.clear();
 
@@ -67,7 +67,7 @@ void Tilemap::setMap(int* tileData, int numTiles_, int pitch_)
 			if (num == -1)
 			{
 				m_tiles.emplace_back(std::make_unique<Tile>(obj::type::tile, false, false, Assets::Textures::EmptyTile, sf::IntRect{ {0,0}, {1,1} }, sf::Vector2f{ 0.f,0.f }, sf::Vector2f{ 0.f,0.f }, -1));
-				m_tiles.back()->setWPos(sf::Vector2f{ (float)(x * 32.f), (float)(y * 32.f) });
+				m_tiles.back()->setWPos(sf::Vector2f{ (float)(x * 128.f), (float)(y * 128.f) });
 				m_tiles.back()->setEmpty();
 			}
 			else

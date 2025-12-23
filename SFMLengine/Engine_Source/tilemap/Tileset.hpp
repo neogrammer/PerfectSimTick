@@ -17,13 +17,13 @@ class Tileset
 	int m_cols{1};
 	int m_rows{1};
 
-	sf::Vector2f m_tileSize{32.f,32.f};
+	sf::Vector2f m_tileSize{128.f,128.f};
 	static std::unique_ptr<AnimTile> EmptyTile;
 	static std::unique_ptr<Tileset> EmptySet;
 
 
 public:
-	Tileset(Assets::Textures tex_ = Assets::Textures::Invariant, int numTiles_ = 1, int pitch = 1, sf::Vector2f size_ = { 32.f,32.f });
+	Tileset(Assets::Textures tex_ = Assets::Textures::Invariant, int numTiles_ = 1, int pitch = 1, sf::Vector2f size_ = { 128.f,128.f });
     ~Tileset();
 
 	std::vector<std::unique_ptr<Tile>>& getTiles();

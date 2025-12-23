@@ -39,6 +39,7 @@ void Assets::initTextures()
 	textures.load((int)Assets::Textures::Tileset_Objects_1, "Assets/Textures/Tilesets/object_tiles_32_32.png");
 	textures.load((int)Assets::Textures::EmptyTile, "Assets/Textures/Tilesets/EmptyTile.png");
 	textures.load((int)Assets::Textures::Tileset_Iso_1, "Assets/Textures/Tilesets/tileset_iso_1.png");
+	textures.load((int)Assets::Textures::Tileset_Blocks_128, "Assets/Textures/Tilesets/tileset_128.png");
 	textures.load((int)Assets::Textures::Knight_Attack, "Assets/Textures/Knight/knight_attack_sheet_18.png");
 	textures.load((int)Assets::Textures::Knight_Attack_Shadow, "Assets/Textures/Knight/Shadow/knight_shadow_attack_sheet_18.png");
 	textures.load((int)Assets::Textures::Knight_Block, "Assets/Textures/Knight/knight_block_sheet_16.png");

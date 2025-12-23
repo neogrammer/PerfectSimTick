@@ -179,6 +179,15 @@
     <ClInclude Include="Engine_Source\action\Entity.hpp">
       <Filter>Header Files\action</Filter>
     </ClInclude>
+    <ClInclude Include="Engine_Source\anim\init_knight_clips.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\anim\PlayerAnimator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_Source\objects\Dir8.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine_Source\resources\tpl\ResourceManager.tpl">
@@ -216,16 +225,7 @@
     <Image Include="Assets\Textures\Knight\knight_block_sheet_16.png">
       <Filter>Assets\Textures\Knight</Filter>
     </Image>
-    <Image Include="Assets\Textures\Knight\knight_death_9.png">
-      <Filter>Assets\Textures\Knight</Filter>
-    </Image>
-    <Image Include="Assets\Textures\Knight\knight_got_hit_13.png">
-      <Filter>Assets\Textures\Knight</Filter>
-    </Image>
     <Image Include="Assets\Textures\Knight\knight_idle_sheet_16.png">
-      <Filter>Assets\Textures\Knight</Filter>
-    </Image>
-    <Image Include="Assets\Textures\Knight\knight_jump_16.png">
       <Filter>Assets\Textures\Knight</Filter>
     </Image>
     <Image Include="Assets\Textures\Knight\knight_run_sheet_17.png">
@@ -247,6 +247,21 @@
       <Filter>Assets\Textures\Tilesets</Filter>
     </Image>
     <Image Include="Assets\Textures\Tilesets\tileset_iso_1.png">
+      <Filter>Assets\Textures\Tilesets</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Knight\knight_death_sheet_9.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Knight\knight_got_hit_sheet_13.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Knight\knight_idle_sheet_16old.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Knight\knight_jump_sheet_16.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Tilesets\tileset_128.png">
       <Filter>Assets\Textures\Tilesets</Filter>
     </Image>
   </ItemGroup>

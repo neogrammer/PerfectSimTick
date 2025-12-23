@@ -210,6 +210,7 @@
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_walk_sheet_15.png" />
     <Image Include="Assets\Textures\Tilesets\EmptyTile.png" />
     <Image Include="Assets\Textures\Tilesets\object_tiles_32_32.png" />
+    <Image Include="Assets\Textures\Tilesets\tileset_128.png" />
     <Image Include="Assets\Textures\Tilesets\tileset_iso_1.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -69,7 +69,7 @@ public:
 
         if (ft > 0.f)
         {
-            m_t += dt;
+            m_t += (float)dt;
             if (m_t >= ft)
             {
                 m_t -= ft;

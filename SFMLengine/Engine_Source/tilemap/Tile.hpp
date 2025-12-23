@@ -16,8 +16,8 @@ public:
 
 	// square bounds should consider 0,0 to be top left of where the image will be drawn,  worldPos - texRectOff + squareBounds_.topLeft(), for example
 
-	Tile(obj::type type_ = obj::type::tile, bool solid_ = true, bool visible_ = true, Assets::Textures tex_ = Assets::Textures::Tileset_Objects_1
-		, sf::IntRect texRect_ = sf::IntRect{sf::Vector2i{0,0}, sf::Vector2i{ 32,32 } }
+	Tile(obj::type type_ = obj::type::tile, bool solid_ = true, bool visible_ = true, Assets::Textures tex_ = Assets::Textures::Tileset_Blocks_128
+		, sf::IntRect texRect_ = sf::IntRect{sf::Vector2i{0,0}, sf::Vector2i{ 128,128 } }
 	    , sf::Vector2f worldPos_ = sf::Vector2f{ 0.f,0.f }, sf::Vector2f texRectOff_ = sf::Vector2f{ 0.f,0.f }, int tileNum_ = -1);
 	
 	virtual ~Tile() override;

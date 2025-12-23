@@ -21,7 +21,7 @@ struct Assets
 	static void Initialize();
 
 	// Resource Enums 
-	enum class Textures : int { BG_Animated_Stars, Tileset_Objects_1, Tileset_Iso_1, 
+	enum class Textures : int { BG_Animated_Stars, Tileset_Objects_1, Tileset_Iso_1, Tileset_Blocks_128,
 		Knight_Attack, Knight_Attack_Shadow, Knight_Block, Knight_Block_Shadow, Knight_Death, Knight_Death_Shadow, Knight_GotHit, Knight_GotHit_Shadow,
 		Knight_Idle, Knight_Idle_Shadow, Knight_Jump, Knight_Jump_Shadow, Knight_Run, Knight_Run_Shadow, Knight_Walk, Knight_Walk_Shadow,
 		EmptyTile, Invariant, Count };
