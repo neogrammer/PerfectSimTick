@@ -8,6 +8,9 @@
 
 #include <misc/util.hpp>
 
+#include "anim/init_knight_clips.hpp"
+#include "anim/PlayerAnimator.hpp"
+
 Game::~Game() = default;
 
 
@@ -221,6 +224,8 @@ void Game::render(sf::RenderWindow& wnd)
 
     // draw tilemap and game objects together from front to back including player
     tmap_.render(wnd);
+    wnd.draw(sprShadow);
+    wnd.draw(sprBody);
 
     // draw foreground layer
 
@@ -260,6 +265,23 @@ void Game::run()
 
     constexpr double fps_60_double{ 1.0 / 60.0 };
  
+    PlayerAnimator anim;
+    initKnightClips(anim);
+
+    AnimRequest req{};
+    req.key = AnimKey::Attack;
+    req.loop = true;
+    req.priority = 0;
+    req.speed01 = 1.0f;
+
+    Dir8 facing = Dir8::S;
+   
+
+    // pick a starting world/screen position for now
+    sf::Vector2f playerPos{ 600.f, 350.f };
+    
+    Assets::Textures curBody = Assets::Textures::Knight_Attack;
+    Assets::Textures curShadow = Assets::Textures::Knight_Attack_Shadow;
     while (wnd.isOpen())
     {
     	pollWindow(wnd);
@@ -273,6 +295,23 @@ void Game::run()
         	fpsCounter++;
             
         	update(fps_60_double);
+            PlayerPose pose = anim.update(fps_60_double, req, facing);
+
+            if (pose.bodyTex != curBody) {
+                sprBody.setTexture(Assets::textures.get((int)pose.bodyTex), true);
+                curBody = pose.bodyTex;
+            }
+            sprBody.setTextureRect(pose.bodyRect);
+            sprBody.setPosition(playerPos + pose.bodyOff);
+
+           
+            if (pose.shadowTex != curShadow) {
+                sprShadow.setTexture(Assets::textures.get((int)pose.shadowTex), true);
+                curShadow = pose.shadowTex;
+            }
+            sprShadow.setTextureRect(pose.shadowRect);
+            sprShadow.setPosition(playerPos + pose.shadowOff);
+        
             accumulator -= fps_60_micros;
         }
      

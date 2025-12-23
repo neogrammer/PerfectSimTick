@@ -6,8 +6,6 @@
 #include <objects/Obj.hpp>
 #include <resources/Assets.hpp>
 
-#include "resources/Assets.hpp"
-
 // All objects are physical manifestations of something
 // thus might not have a size
 class VisObj : public Obj

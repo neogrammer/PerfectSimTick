@@ -17,7 +17,7 @@
 #include "InputBuffer.hpp"
 #include "ActionMachine.hpp"
 
-class IAction;
+struct IAction;
 
 class Entity : public VisObj
 {

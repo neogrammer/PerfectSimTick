@@ -53,6 +53,8 @@ class Game
     GameState currentState_{GameState::Stage};
     StageName currentStage_{ StageName::Intro };
     std::shared_ptr<AnimTile> aTile_;
+    sf::Sprite sprShadow{ Assets::textures.get((int)Assets::Textures::Knight_Attack_Shadow) };
+    sf::Sprite sprBody{ Assets::textures.get((int)Assets::Textures::Knight_Attack) };
 public:
 	
 	// Default constructor

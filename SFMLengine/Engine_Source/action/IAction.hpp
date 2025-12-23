@@ -4,7 +4,7 @@
 #include "Events.hpp"
 #include "AnimRequest.hpp"
 
-struct Entity; // forward
+class Entity; // forward
 
 struct IAction {
     virtual ~IAction() = default;

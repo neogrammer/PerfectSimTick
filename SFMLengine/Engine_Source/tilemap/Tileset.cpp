@@ -52,6 +52,9 @@ sf::IntRect Tileset::getTileTexRect(int index)
 {
 	return sf::IntRect(sf::Vector2i(tileVec.at(index)->getTexPosition()), sf::Vector2i(tileVec.at(index)->getSize()));
 }*/
+std::unique_ptr<AnimTile> Tileset::EmptyTile = nullptr;
+std::unique_ptr<Tileset> Tileset::EmptySet = nullptr;
+
 Tileset::Tileset(Assets::Textures tex_, int numTiles_, int pitch_, sf::Vector2f size_)
 	: m_tiles{}
 	, m_tex{ tex_ },m_numTiles{numTiles_}, m_cols{pitch_}, m_rows{numTiles_ / pitch_}, m_tileSize{size_}
@@ -65,6 +68,17 @@ Tileset::Tileset(Assets::Textures tex_, int numTiles_, int pitch_, sf::Vector2f 
 	}
 
 	m_animTiles.clear();
+	static bool skip = false;
+	if (!skip)
+	{
+		if (EmptySet == nullptr && EmptyTile == nullptr)
+		{
+			skip = true;
+
+			EmptySet = std::make_unique<Tileset>();
+			EmptyTile = std::make_unique<AnimTile>(EmptySet->getTiles(), 0, 0, 0.f);
+		}
+	}
 
 }
 
@@ -122,6 +136,7 @@ AnimTile& Tileset::getAnimTile(int index_)
 		}
 	}
 	//throw std::runtime_error("Sorry, no anim tile at index: " + index_);
+	return *EmptyTile;
 }
 
 float Tileset::getTW()

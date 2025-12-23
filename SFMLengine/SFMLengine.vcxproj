@@ -115,7 +115,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)Engine_Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -132,7 +132,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SFML_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)Engine_Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
@@ -167,10 +167,13 @@
     <ClInclude Include="Engine_Source\action\Events.hpp" />
     <ClInclude Include="Engine_Source\action\IAction.hpp" />
     <ClInclude Include="Engine_Source\action\InputBuffer.hpp" />
+    <ClInclude Include="Engine_Source\anim\init_knight_clips.hpp" />
+    <ClInclude Include="Engine_Source\anim\PlayerAnimator.hpp" />
     <ClInclude Include="Engine_Source\core\Animation.hpp" />
     <ClInclude Include="Engine_Source\core\Game.hpp" />
     <ClInclude Include="Engine_Source\misc\globals.hpp" />
     <ClInclude Include="Engine_Source\misc\util.hpp" />
+    <ClInclude Include="Engine_Source\objects\Dir8.hpp" />
     <ClInclude Include="Engine_Source\objects\Obj.hpp" />
     <ClInclude Include="Engine_Source\objects\Obj_Base.hpp" />
     <ClInclude Include="Engine_Source\objects\StaticObject.hpp" />
@@ -190,10 +193,11 @@
     <Image Include="Assets\Textures\Invariant.png" />
     <Image Include="Assets\Textures\Knight\knight_attack_sheet_18.png" />
     <Image Include="Assets\Textures\Knight\knight_block_sheet_16.png" />
-    <Image Include="Assets\Textures\Knight\knight_death_9.png" />
-    <Image Include="Assets\Textures\Knight\knight_got_hit_13.png" />
+    <Image Include="Assets\Textures\Knight\knight_death_sheet_9.png" />
+    <Image Include="Assets\Textures\Knight\knight_got_hit_sheet_13.png" />
     <Image Include="Assets\Textures\Knight\knight_idle_sheet_16.png" />
-    <Image Include="Assets\Textures\Knight\knight_jump_16.png" />
+    <Image Include="Assets\Textures\Knight\knight_idle_sheet_16old.png" />
+    <Image Include="Assets\Textures\Knight\knight_jump_sheet_16.png" />
     <Image Include="Assets\Textures\Knight\knight_run_sheet_17.png" />
     <Image Include="Assets\Textures\Knight\knight_walk_sheet_15.png" />
     <Image Include="Assets\Textures\Knight\Shadow\knight_shadow_attack_sheet_18.png" />

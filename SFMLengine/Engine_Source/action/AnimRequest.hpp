@@ -1,9 +1,10 @@
 #pragma once
 #include <cstdint>
 
-enum class AnimKey : uint16_t {
-    Idle, Walk, Run,
-    Slash, Cast, Hurt, Dead
+enum class AnimKey : uint16_t
+{
+    Idle, Walk, Run, Jump,
+    Attack, Block, GotHit, Death
 };
 
 struct AnimRequest {
